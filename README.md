@@ -45,6 +45,9 @@ Each case study here shows **how I think**, **how I build**, and **why it matter
 
 - [`🌙 Dreamcatcher`](./dreamcatcher)  
   *An AI-powered dream interpretation app — blending psychology, GPT-4, and vector search for subconscious insight.*
+  
+- [`🎰 Koin Direct`](./koin-direct)  
+  *Cashless casino funding via Bluetooth and QR — powering slot machine deposits and withdrawals through React Native + Koin Pay APIs.*
 
 ---
 
