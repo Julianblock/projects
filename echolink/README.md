@@ -54,7 +54,26 @@ Each client has a **unique QR code** that opens a mobile feedback UI tied to the
 ---
 
 ## 🎥 [Screenshots or Demo Placeholder]
-> *(Coming soon: GIF of feedback flow and admin dashboard)*
+---
+
+## 🖥️ The Experience — Visual Walkthrough
+
+### 🔐 Seamless Login
+<p align="center">
+  <img src="./login.png" alt="Login Screen" width="700"/>
+</p>
+
+---
+
+### 📊 Real-Time Sentiment Dashboard
+<p align="center">
+  <img src="./dashboard.png" alt="Dashboard Screen" width="700"/>
+</p>
+
+> **Command center for morale.** Executives and dispatchers gain live visibility into driver sentiment across terminals, issues, and mood categories — all powered by embedded AI.
+
+---
+
 
 ---
 
