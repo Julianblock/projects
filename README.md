@@ -1,7 +1,4 @@
-# 🧠 Julian Block – Project Case Studies
-
-> _"Innovation isn't always open-source — sometimes it's confidential, strategic, and way too valuable to leak."_  
-> — Julian Block, AI Architect | Engineer | R&D Visionary
+# 🧠 Julian Block – Projects
 
 ---
 
