@@ -55,8 +55,7 @@ PokerGO is the premier streaming platform for professional poker — including c
   <img src="./subscribe.png" alt="Subscription CTA Page" width="700"/>
 </p>
 
-> **Every chip counts.** Optimized campaign page built to drive subscriptions during high-traffic WSOP periods, with A/B tested messaging, video embe
-
+> **Every chip counts.** Optimized campaign page built to drive subscriptions during high-traffic WSOP periods
 
 ## 🧠 Tech Highlights
 
