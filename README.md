@@ -20,12 +20,7 @@ Most of my production work has been developed under **NDA**, powering **enterpri
 Due to IP sensitivity, the source code remains private.  
 But what I *can* share are **deep-dive case studies** that detail:
 
-- The **architecture** I designed  
-- The **technologies** I implemented  
-- The **business problems** I solved  
-- And the **real-world outcomes** these systems delivered
-
-Each case study here shows **how I think**, **how I build**, and **why it mattered** to the companies I served.
+Each example here shows **how I think**, **how I build**, and **why it mattered** to the companies I served.
 
 ---
 
