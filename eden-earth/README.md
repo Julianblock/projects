@@ -1,131 +1,169 @@
-# 🌊 Eden Earth – Photo Litter. Clean It. See the Ocean Impact.  
-**Role:** Founder • Full-Stack & Mobile Engineer • Product Designer  
-**Project Type:** Consumer Mobile App + Marketing Platform  
-**Duration:** 2025 – Present  
-**Tech Stack:** React Native (Expo SDK 54), TypeScript, Next.js 14, Supabase (Postgres, Auth, RLS, Storage), Google Gemini Vision, Zustand, NativeWind, Reanimated + Moti, React Native Maps, Expo Notifications, OpenLitterMap API, Railway, EAS Build
+# Eden Earth
 
----
+A mobile app that turns before-and-after cleanup photos into an estimate of the litter kept out of waterways.
 
-<p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&pause=1000&color=0BA360&center=true&vCenter=true&width=650&lines=Photo+Litter.+Clean+It.;See+the+Ocean+Impact.;Street+Cleanups+as+Shareable+Proof." alt="Typing SVG" />
-</p>
+**Role:** Founder, full-stack and mobile engineer, product designer  
+**Type:** Consumer mobile app and marketing site  
+**Period:** 2025 – present  
+**Status:** iOS in TestFlight; marketing site live at [edenearthapp.com](https://www.edenearthapp.com); Android not yet released  
+**Source:** Private
 
----
-
-## 🧩 Overview
-
-**Eden Earth** turns street cleanups into ocean impact you can see and share. Users snap a **before** photo of litter, clean it up, and snap an **after**. Eden's vision AI reads both photos and estimates what was diverted from waterways — plastic weight, bottle-equivalents, and the wildlife it might have reached — then wraps it in a shareable impact card.
-
-Street litter becomes ocean plastic. Eden builds the habit, measures the difference, and lets people **show the work** — one block at a time.
-
-🌐 [edenearthapp.com](https://www.edenearthapp.com) · 📱 iOS on TestFlight · Android coming soon
-
----
-
-## 🛠️ My Contributions
-
-- 🌱 Designed and built the **entire product end to end** — iOS/Android app, marketing site, backend, and brand
-- 📸 Built a **guided Before → Clean → After → AI → Impact** logging flow with camera capture and photo upload
-- 🧠 Engineered a **Gemini-powered vision pipeline** that compares before/after photos and returns structured impact estimates, streamed back to the app
-- 🔔 Made AI analysis **background-safe** — users can leave mid-analysis and get a push notification when their impact card is ready
-- 🗺️ Integrated **OpenLitterMap** clusters to show real litter hotzones nearby, with a server proxy and direct fallback for reliability
-- 🏆 Built **EcoScore, streaks, weekly challenges, and groups** to turn one-off cleanups into a habit
-- ⏰ Designed a **reminder scheduler** with nudge types, daily caps, weekly goals, and quiet hours
-- 🔐 Modeled the data in **Supabase with row-level security**, plus public share badges and OG image generation for social proof
-- 🚀 Shipped through **EAS Build + App Store Connect**, with the web platform deployed on **Railway**
-
----
-
-## 📊 Results / Impact
-
-- 📱 Live on **iOS TestFlight**, with the full App Store listing and screenshot sets prepared for iPhone and iPad
-- 🌐 Production marketing site live at **edenearthapp.com** with lead capture, share pages, and admin tooling
-- 🧾 Every impact number is labeled as an **AI estimate from the user's photos** — honest by design, not a lab claim
-- 💚 Positioned as a **community climate product**: individual proof that rolls up into group challenges and shared impact
-
----
-
-## 🖼️ Screenshots
-
-### 🌐 Marketing Site  
 <p align="center">
   <img src="./00-marketing-site.png" alt="Eden Earth marketing site" width="800"/>
 </p>
 
-> **Littered beach, clear promise.** The landing page leads with the problem and the product in one frame — photo litter, clean it, see the ocean impact.
+## Overview
 
----
+Street litter ends up in rivers and the ocean. Eden asks users to photograph litter, clean it up, and photograph the spot again. A vision model compares the two photos and estimates what was removed (plastic weight, bottle equivalents, and the wildlife the litter could have reached), and the app turns the result into a shareable impact card.
 
-### 🌳 Welcome Back  
+Streaks, weekly challenges, groups, and reminders are there to turn one cleanup into a habit. Every number in the app is labeled as an AI estimate based on the user's photos.
+
+## What I built
+
+- The whole product: the iOS and Android app (Expo), the marketing site and API (Next.js), the database, and the brand
+- A guided five-step logging flow: before photo, clean, after photo, AI analysis, impact
+- A Gemini vision pipeline that compares both photos in a single multimodal request and streams the result back to the app
+- Background-safe analysis: users can leave the screen, and a local notification fires when the impact card is ready
+- A map of nearby litter hotzones from OpenLitterMap, through a server proxy with a direct fallback
+- EcoScore, streaks, weekly challenges, and groups
+- A reminder scheduler with nudge types, nudges per day, a weekly cleanup goal, and a quiet window
+- A Supabase schema with row-level security, plus public share pages with generated Open Graph images
+- Builds through EAS and App Store Connect, with the web platform deployed on Railway
+
+## Technical highlights
+
+### One multimodal request per cleanup
+
+The app resizes both photos to 768 px wide JPEGs before upload. The server sends them together in a single Gemini Flash-Lite request, which keeps cost and latency low. A separate request turns the before photo into a short cleanup brief.
+
+### Streaming analysis that survives leaving the screen
+
+The impact endpoint proxies Gemini's server-sent event stream to the app, so results arrive progressively. Job state lives in a Zustand store outside the screen, and when analysis finishes, expo-notifications shows a local "Your cleanup is ready" notification.
+
+### Hotzones with fallbacks
+
+The map asks the Eden API for litter clusters near the user. The API proxies OpenLitterMap's public cluster API, with ODbL attribution. If the proxy fails or returns nothing, the app calls OpenLitterMap directly, and a small seed dataset covers the case where both fail.
+
+### Data model
+
+Supabase Postgres with row-level security holds profiles, groups and their members, eco actions, community posts, reminder preferences, share badges, push tokens, and group campaigns.
+
+## Architecture
+
+```mermaid
+flowchart LR
+  subgraph Clients
+    APP["Eden app<br/>Expo + React Native"]
+    WEB["Browser<br/>marketing + share pages"]
+  end
+
+  subgraph Railway["Railway: Next.js 14"]
+    BRIEF["Cleanup brief API"]
+    IMPACT["Cleanup impact API<br/>SSE stream"]
+    HOT["Hotzones proxy"]
+    SHARE["Share pages + OG images"]
+    ADMIN["Admin push + email"]
+  end
+
+  subgraph Supabase
+    AUTH["Auth"]
+    DB[("Postgres + RLS")]
+  end
+
+  subgraph External
+    GEM["Gemini Flash-Lite<br/>vision"]
+    OLM["OpenLitterMap<br/>cluster API"]
+    EXPO["Expo Push"]
+    RESEND["Resend email"]
+  end
+
+  APP -->|before photo| BRIEF --> GEM
+  APP -->|before + after photos| IMPACT --> GEM
+  APP --> HOT --> OLM
+  APP -.->|fallback| OLM
+  APP --> AUTH
+  APP --> DB
+  WEB --> SHARE --> DB
+  ADMIN --> DB
+  ADMIN --> EXPO --> APP
+  ADMIN --> RESEND
+```
+
+## Stack
+
+| Layer | Technology |
+|---|---|
+| Mobile | Expo SDK 54, React Native 0.81, React 19, TypeScript, Zustand, NativeWind, Reanimated 4, Moti, react-native-maps, expo-camera, expo-notifications |
+| Web and API | Next.js 14, React 18, Tailwind CSS, @vercel/og |
+| Data and auth | Supabase (Postgres, Auth, row-level security, Storage) |
+| AI | Google Gemini Flash-Lite (vision) |
+| External services | OpenLitterMap API, Expo Push, Resend |
+| Hosting and delivery | Railway, EAS Build, App Store Connect |
+
+## Status
+
+- iOS is in TestFlight, with the App Store listing and iPhone and iPad screenshot sets prepared
+- The marketing site is live with lead capture, share pages, and admin tools
+- Android is not yet released
+
+## Screenshots
+
+### Marketing site
+
+<p align="center">
+  <img src="./00-marketing-site.png" alt="Eden Earth marketing site" width="800"/>
+</p>
+
+The landing page states the problem and the product in one frame: photograph litter, clean it, see the ocean impact.
+
+### Welcome
+
 <p align="center">
   <img src="./10-welcome.png" alt="Welcome screen" width="300"/>
 </p>
 
-> **Calm from the first frame.** The launch screen syncs impact, circles, and reminders behind a quiet, nature-first visual.
+The launch screen, shown while impact data, groups, and reminders sync.
 
----
+### Home
 
-### 🏠 Daily Mission + Ocean Impact  
 <p align="center">
-  <img src="./01-home-mission.png" alt="Home daily mission" width="300"/>
-  &nbsp;&nbsp;
-  <img src="./02-home-impact.png" alt="Home ocean impact and weekly challenge" width="300"/>
+  <img src="./01-home-mission.png" alt="Home with daily mission" width="300"/>
+  <img src="./02-home-impact.png" alt="Home with impact totals and weekly challenge" width="300"/>
 </p>
 
-> **One mission, one number.** Home leads with today's mission and running kilograms diverted, then bottles, marine life, and birds — plus a weekly Shoreline challenge with live progress.
+Today's mission and the running total of kilograms diverted, followed by bottles, marine life, and birds, and a weekly Shoreline challenge with progress.
 
----
+### Logging a cleanup
 
-### 📸 Snap the After  
 <p align="center">
-  <img src="./03-log-after.png" alt="Log cleanup after photo step" width="300"/>
+  <img src="./03-log-after.png" alt="After photo step" width="300"/>
+  <img src="./04-log-analyzing.png" alt="AI analysis in progress" width="300"/>
 </p>
 
-> **Guided capture.** A five-step tracker walks users from before to impact. Same angle if you can — Eden handles the rest.
+A five-step tracker guides the user from the before photo to the impact card. Analysis runs in the background, so the user can leave the screen.
 
----
+### Impact card
 
-### ✨ Reading Your Cleanup  
-<p align="center">
-  <img src="./04-log-analyzing.png" alt="AI analyzing cleanup" width="300"/>
-</p>
-
-> **AI that respects your time.** Vision analysis runs in the background — leave the screen and get a push notification when it's done.
-
----
-
-### 🐢 Impact Card + Share  
 <p align="center">
   <img src="./05-impact-ready.png" alt="Impact result card" width="300"/>
-  &nbsp;&nbsp;
-  <img src="./06-impact-share.png" alt="Impact share" width="300"/>
+  <img src="./06-impact-share.png" alt="Sharing an impact card" width="300"/>
 </p>
 
-> **Proof, not vibes.** Each cleanup becomes a story — what was diverted, the wildlife it could have reached, and what it adds up to over a year. One tap to share.
+What was diverted, the wildlife it could have reached, and what the habit would add up to over a year, with sharing in one tap.
 
----
+### Reminders
 
-### 🔔 Reminders That Fit Real Life  
 <p align="center">
   <img src="./07-reminders.png" alt="Reminder types" width="300"/>
-  &nbsp;&nbsp;
-  <img src="./08-remind-schedule.png" alt="Reminder schedule and quiet hours" width="300"/>
+  <img src="./08-remind-schedule.png" alt="Reminder schedule and quiet window" width="300"/>
 </p>
 
-> **Built for street cleanups, not inbox spam.** Cleanup nudges, log reminders, streak guards, and group check-ins — with daily caps, weekly goals, and quiet hours.
+Cleanup nudges, log reminders, streak guards, and group check-ins, with a daily nudge limit, a weekly cleanup goal, and a quiet window.
 
----
+### Profile
 
-### 👤 Profile + EcoScore  
 <p align="center">
   <img src="./09-profile.png" alt="Profile and EcoScore" width="300"/>
 </p>
 
-> **Your contribution at a glance.** Actions, EcoScore, streak, and kilograms diverted — with a plain-language explanation of how the score is earned.
-
----
-
-## 🌍 Small Actions, Visible Proof  
-**Eden Earth** isn't another carbon calculator. It's a camera-first habit loop that turns picking up one plastic bag into **evidence you can see, share, and build on** — bridging AI vision, community accountability, and real-world cleanup.
-
----
+Actions, EcoScore, streak, and kilograms diverted, with a plain-language explanation of how the score is earned.
