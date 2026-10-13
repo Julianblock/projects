@@ -26,6 +26,9 @@ Each example here shows **how I think**, **how I build**, and **why it mattered*
 
 ## 🧩 Featured Projects
 
+- [`🌊 Eden Earth`](./eden-earth)  
+  *Photo litter, clean it, see the ocean impact — a React Native app where Gemini vision turns before/after cleanup photos into shareable impact proof.*
+
 - [`🚛 Echolink`](./echolink)  
   *Real-time AI sentiment platform for enterprise logistics — GPT-4-powered, QR-driven, vector-indexed.*
 
