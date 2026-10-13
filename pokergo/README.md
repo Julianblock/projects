@@ -1,77 +1,102 @@
-# ♠️ PokerGO – Live Reporting & Data Streaming Platform  
-**Role:** Senior Web Developer  
-**Client:** PokerGO (World Series of Poker Division)  
-**Duration:** 2021 – 2022  
-**Tech Stack:** Vue.js, Node.js, Express.js, PHP, AngularJS, Strapi, Ionic, WordPress, MySQL, AEM
+# PokerGO
 
----
+Live tournament reporting, partner data APIs, and subscription campaign pages for PokerGO's poker coverage.
+
+**Role:** Senior web developer  
+**Client:** PokerGO (World Series of Poker coverage)  
+**Period:** 2021 – 2022  
+**Source:** Private (client work)
 
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&pause=1000&color=FF5C8A&center=true&vCenter=true&width=600&lines=Real-Time+Poker+Streaming+Platform;Live+Tournament+Reporting+at+Scale;Engineered+for+Fans%2C+Broadcasters+%26+Partners" alt="Typing SVG" />
+  <img src="./reporting.png" alt="Live reporting event page" width="800"/>
 </p>
 
----
+## Overview
 
-## 🧩 Overview
+PokerGO streams professional poker, including the World Series of Poker (WSOP). I worked on three parts of the platform: the live tournament reporting system, the partner APIs that syndicate tournament data to media partners, and the campaign pages that drive subscriptions during major events.
 
-PokerGO is the premier streaming platform for professional poker — including coverage of the **World Series of Poker (WSOP)**. I was brought on to develop and enhance both the **live tournament reporting infrastructure** and the **partner-facing APIs** that power media coverage and data sync during major events.
+## What I built
 
----
+- The WSOP live reporting web app, with real-time tournament updates synced across web and mobile
+- Partner APIs with tiered authentication and rate limits
+- Campaign sites with A/B-tested layouts for subscriptions tied to WSOP and Poker Masters
+- Internal tooling on Strapi and WordPress for marketing content sync and editorial control
+- Frontend refactoring across the Vue.js and AngularJS codebases
 
-## 🛠️ My Contributions
+## Technical highlights
 
-- 📡 Built the **WSOP Live Reporting web app** for real-time tournament updates, synced across mobile and web
-- 🧰 Developed **custom APIs** allowing media partners to access PokerGO data with tiered authentication and rate limits
-- 🧭 Built **campaign sites** with A/B tested layouts for subscription conversions tied to WSOP and Poker Masters
-- 🧑‍💼 Streamlined internal tooling using Strapi and WordPress for marketing content sync and editorial control
-- 📲 Refactored frontend components across Vue.js + AngularJS stack for modern UX performance
+### Live reporting
 
----
+Tournament activity entered by reporters and dealers syncs with the backend in near real time and is published across PokerGO's platforms: live updates, chip counts, structure, and payouts.
 
-## 📊 Results / Impact
+### Partner APIs
 
-- 🎥 Supported real-time content delivery during **WSOP 2021**, one of the most-watched tournaments in poker history
-- 🌐 Enabled seamless partner syndication with custom APIs used by sports news sites and affiliate networks
-- 💰 Boosted PokerGO’s subscription conversion rate via optimized campaign landing experiences
-- ⚙️ Improved reporting system reliability, leading to **<1% downtime during all major live events**
+Player data, chip counts, and hand history are exposed to broadcasters and news sites through a custom authentication layer with tiered access and rate limits, so partners can embed coverage directly.
 
----
+### Editable campaign pages
 
----
+AEM and Strapi let marketing staff run high-traffic landing pages, with live preview and variant switching, without waiting on an engineering sprint.
 
-## 🎥 Live Platform Showcase — Visuals
+## Architecture
 
-### 🧾 Real-Time Tournament Reporting  
+A simplified view based on the systems described on this page.
+
+```mermaid
+flowchart LR
+  subgraph Inputs
+    REP["Reporters + dealer inputs"]
+    CMS["Strapi, WordPress, AEM"]
+  end
+
+  subgraph Backend
+    API["Reporting API<br/>Node.js + Express"]
+    DB[("MySQL")]
+    PAPI["Partner API<br/>auth + rate limits"]
+  end
+
+  subgraph Clients
+    WEB["Live reporting web app<br/>Vue.js"]
+    MOB["Mobile app<br/>Ionic"]
+    CAMP["Campaign pages"]
+    PART["Media partners"]
+  end
+
+  REP --> API --> DB
+  API --> WEB
+  API --> MOB
+  DB --> PAPI --> PART
+  CMS --> CAMP
+```
+
+## Stack
+
+| Layer | Technology |
+|---|---|
+| Frontend | Vue.js, AngularJS, Ionic |
+| Backend | Node.js, Express.js, PHP |
+| Content | Strapi, WordPress, AEM |
+| Data | MySQL |
+
+## Results
+
+- Real-time reporting during WSOP 2021
+- Partner APIs used by sports news sites and affiliate networks
+- Under 1% downtime across major live events
+
+## Screenshots
+
+### Live reporting
+
 <p align="center">
-  <img src="./reporting.png" alt="Live Reporting App Screenshot" width="700"/>
+  <img src="./reporting.png" alt="Live reporting event page" width="800"/>
 </p>
 
-> **High-stakes coverage, instant delivery.** The WSOP Live Reporting app streams updates in real time — including chip counts, hand history, and winner tracking — powered by a resilient API and modular frontend.
+A live reporting event page (captured in 2025) with tabs for live updates, chip counts, structure, payouts, and photos, plus an event summary of blinds, entrants, prize pool, and places paid.
 
----
+### Subscription flow
 
-### 🪙 Subscription Landing Page  
 <p align="center">
-  <img src="./subscribe.png" alt="Subscription CTA Page" width="700"/>
+  <img src="./subscribe.png" alt="Subscription plan selection" width="800"/>
 </p>
 
-> **Every chip counts.** Optimized campaign page built to drive subscriptions during high-traffic WSOP periods
-
-## 🧠 Tech Highlights
-
-### ♠️ WSOP Live Reporting Engine  
-Designed a frontend application that syncs tournament activity with the backend in near real-time, pulling from dealer and reporter inputs and broadcasting across all PokerGO platforms.
-
-### 📡 Partner API Infrastructure  
-Exposed a secure set of partner APIs (player data, chip counts, hand history) using custom auth layers, enabling broadcasters and sites to integrate coverage natively.
-
-### 🎯 Marketing Flexibility with AEM & Strapi  
-Enabled non-technical staff to manage high-traffic landing pages with live preview and variant switching for campaigns — reducing dependency on engineering sprints.
-
----
-
-## ♣️ Engineering at the Table  
-PokerGO wasn’t just a content platform — it was a **live sports infrastructure** play that demanded performance, reliability, and cross-platform coverage.  
-I helped build the system that made fans, pros, and media feel like they were sitting at the final table.
-
----
+Step one of a four-step subscription flow, comparing monthly, quarterly, annual, and VIP plans.
