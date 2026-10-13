@@ -1,63 +1,72 @@
-# 🧠 Julian Block – Projects
----
+# Julian Block: Projects
 
-<p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&pause=1000&color=00FF99&center=true&vCenter=true&width=700&lines=Turning+AI+into+Impact.;Architecting+at+Scale.;R&D+Built+for+the+Next+Era." alt="Typing SVG" />
-</p>
+Case studies of products and client systems I've designed and built.
 
----
+Most of my production work was done under NDA for companies in logistics, fintech and payments, cannabis and wellness, media streaming, and AI R&D, so the source code stays private. Each page here covers the problem, what I built, how the system fits together (with an architecture diagram), the results, and screenshots.
 
-## 🛡 Why You Won’t See Much Code
+## Products
 
-Most of my production work has been developed under **NDA**, powering **enterprise-grade systems** across:
+### Pitch Practice
 
-- 🚛 **Logistics**
-- 🧾 **Fintech & Payments**
-- 🧬 **Cannabis & Wellness**
-- 🎥 **Media Streaming**
-- 🧠 **AI R&D**
+AI role-play training for retail sales teams: reps talk to AI customers by voice or text, get scored against their company's playbook, and managers coach from the results. Web app and native iOS app.
 
-Due to IP sensitivity, the source code remains private.  
-But what I *can* share are **deep-dive case studies** that detail:
+**Stack:** Next.js, React, Expo, Supabase, OpenAI Realtime API, Railway  
+**Links:** [Case study](./pitch-practice)
 
-Each example here shows **how I think**, **how I build**, and **why it mattered** to the companies I served.
+### Eden Earth
 
----
+A mobile app that turns before-and-after cleanup photos into an AI estimate of the litter kept out of waterways, with streaks, challenges, and shareable impact cards.
 
-## 🧩 Featured Projects
+**Stack:** Expo, React Native, Next.js, Supabase, Google Gemini, Railway  
+**Links:** [Case study](./eden-earth) · [edenearthapp.com](https://www.edenearthapp.com)
 
-- [`🎙️ Pitch Practice`](./pitch-practice)  
-  *AI role-play training for retail sales teams — live-voice AI shoppers, instant scoring, manager coaching, and a native iOS app, built in one weekend.* 🌐 [Live app](https://web-production-9994a2.up.railway.app)
+### Dreamcatcher
 
-- [`🌊 Eden Earth`](./eden-earth)  
-  *Photo litter, clean it, see the ocean impact — a React Native app where Gemini vision turns before/after cleanup photos into shareable impact proof.*
+A dream journal that interprets entries with GPT-4 and connects them to earlier dreams through vector search.
 
-- [`🚛 Echolink`](./echolink)  
-  *Real-time AI sentiment platform for enterprise logistics — GPT-4-powered, QR-driven, vector-indexed.*
+**Stack:** Next.js, React, Flask, GPT-4, Pinecone, Supabase  
+**Links:** [Case study](./dreamcatcher)
 
-- [`🖥 RoadOne Client Portal`](./roadone-client-portal)  
-  *Unified dispatch, routing, payments, and terminal tracking — built for trucking efficiency at national scale.*
+## Client work
 
-- [`♠️ PokerGO`](./pokergo)  
-  *Live reporting and partner APIs powering the World Series of Poker’s real-time tournament visibility.*
+### Koin Direct
 
-- [`🧬 Curaleaf.com`](./curaleaf)  
-  *Full-stack e-commerce and analytics engine for one of America’s top cannabis companies — powered by React, Azure, and GTM.*
+A mobile app for funding and cashing out casino slot machines over Bluetooth, QR, or player card, built for Koin Payments.
 
-- [`🌙 Dreamcatcher`](./dreamcatcher)  
-  *An AI-powered dream interpretation app — blending psychology, GPT-4, and vector search for subconscious insight.*
-  
-- [`🎰 Koin Direct`](./koin-direct)  
-  *Cashless casino funding via Bluetooth and QR — powering slot machine deposits and withdrawals through React Native + Koin Pay APIs.*
+**Stack:** React Native, TypeScript, Bluetooth LE, Koin Pay API, Ardent Connect  
+**Links:** [Case study](./koin-direct)
 
----
+### Echolink
 
-## ✨ More Coming Soon
+Driver feedback and sentiment analysis for enterprise trucking companies, combining VADER, GPT-4, and vector classification.
 
-I'm always building — R&D prototypes, experimental interfaces, AI-powered systems, and dream logic engines.  
-If you'd like to collaborate, explore a project, or just vibe about optics, AI, or what makes great software — reach out.
+**Stack:** React, React Native, Flask, Supabase, GPT-4, VADER  
+**Links:** [Case study](./echolink)
 
-📬 [jblock@jblocktech.com](mailto:jblock@jblocktech.com)  
-🌐 [jblocktech.com](https://jblocktech.com)
+### RoadOne Client Portal
 
----
+Order tracking, dispatch visibility, and payments for RoadOne's intermodal logistics customers.
+
+**Stack:** React, Redux, PHP, Node.js, MySQL, TSYS, Stripe, Mapbox  
+**Links:** [Case study](./roadone-client-portal)
+
+### PokerGO
+
+Live tournament reporting, partner data APIs, and subscription campaign pages for PokerGO's World Series of Poker coverage.
+
+**Stack:** Vue.js, AngularJS, Node.js, Express, Strapi, WordPress, AEM, MySQL  
+**Links:** [Case study](./pokergo)
+
+### Curaleaf and Select
+
+E-commerce storefronts, payments integration, and analytics for two national cannabis brands across 18+ state subdomains.
+
+**Stack:** React, Gatsby, Azure Functions, GraphQL, Strapi, AEM, Braintree  
+**Links:** [Case study](./curaleaf)
+
+## Contact
+
+I'm always building, from R&D prototypes to AI systems. If you'd like to collaborate or talk through a project, get in touch.
+
+Email: [jblock@jblocktech.com](mailto:jblock@jblocktech.com)  
+Website: [jblocktech.com](https://jblocktech.com)
