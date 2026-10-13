@@ -1,72 +1,80 @@
-# Julian Block: Projects
+<h1 align="center">Julian Block</h1>
 
-Case studies of products and client systems I've designed and built.
+<p align="center">
+  Software engineer. I design and build AI products, mobile apps, and the systems behind them.
+  <br/>
+  <a href="https://jblocktech.com">jblocktech.com</a> · <a href="mailto:jblock@jblocktech.com">jblock@jblocktech.com</a>
+</p>
 
-Most of my production work was done under NDA for companies in logistics, fintech and payments, cannabis and wellness, media streaming, and AI R&D, so the source code stays private. Each page here covers the problem, what I built, how the system fits together (with an architecture diagram), the results, and screenshots.
+---
 
-## Products
+The work I enjoy most is where AI turns into something a person can actually use: a customer you can rehearse a pitch with, a photo that becomes a measurement, a dashboard that tells a manager where to look next.
 
-### Pitch Practice
+Most of what I've shipped was client work under NDA in logistics, fintech and payments, cannabis and wellness, and media streaming, so the source stays private. These pages are the next best thing. Each one covers the problem, what I built, an architecture diagram, the results, and screenshots.
 
-AI role-play training for retail sales teams: reps talk to AI customers by voice or text, get scored against their company's playbook, and managers coach from the results. Web app and native iOS app.
+## Projects
 
-**Stack:** Next.js, React, Expo, Supabase, OpenAI Realtime API, Railway  
-**Links:** [Case study](./pitch-practice)
+<table>
+  <tr>
+    <td width="50%" valign="top">
+      <a href="./pitch-practice"><img src="./pitch-practice/preview.jpg" alt="Pitch Practice" width="100%"/></a>
+      <h3><a href="./pitch-practice">Pitch Practice</a></h3>
+      <p>AI role-play training for retail sales teams. Reps talk to AI customers by voice, get scored against their company's playbook, and managers coach from the results.</p>
+      <p><sub>Own product · 2026<br/>Next.js · Expo · Supabase · OpenAI Realtime API</sub></p>
+    </td>
+    <td width="50%" valign="top">
+      <a href="./eden-earth"><img src="./eden-earth/preview.jpg" alt="Eden Earth" width="100%"/></a>
+      <h3><a href="./eden-earth">Eden Earth</a></h3>
+      <p>Before-and-after cleanup photos become an AI estimate of the litter kept out of waterways, with streaks, challenges, and shareable impact cards.</p>
+      <p><sub>Own product · 2025 – present<br/>Expo · React Native · Next.js · Supabase · Gemini</sub></p>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+      <a href="./koin-direct"><img src="./koin-direct/preview.jpg" alt="Koin Direct" width="100%"/></a>
+      <h3><a href="./koin-direct">Koin Direct</a></h3>
+      <p>Fund and cash out casino slot machines from your phone over Bluetooth, QR, or player card. No kiosk, no paper tickets.</p>
+      <p><sub>Client: Koin Payments · 2024 – 2025<br/>React Native · TypeScript · Bluetooth LE · Koin Pay API</sub></p>
+    </td>
+    <td width="50%" valign="top">
+      <a href="./dreamcatcher"><img src="./dreamcatcher/preview.jpg" alt="Dreamcatcher" width="100%"/></a>
+      <h3><a href="./dreamcatcher">Dreamcatcher</a></h3>
+      <p>A dream journal that interprets entries with GPT-4 and connects them to earlier dreams through vector search.</p>
+      <p><sub>Own prototype · 2024 – present<br/>Next.js · Flask · GPT-4 · Pinecone · Supabase</sub></p>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+      <a href="./echolink"><img src="./echolink/preview.jpg" alt="Echolink" width="100%"/></a>
+      <h3><a href="./echolink">Echolink</a></h3>
+      <p>Anonymous driver feedback for trucking companies, scored for sentiment and sorted into issues so leadership knows what to fix.</p>
+      <p><sub>Client: Ramsey Mediaworks · 2023 – present<br/>React · React Native · Flask · Supabase · GPT-4</sub></p>
+    </td>
+    <td width="50%" valign="top">
+      <a href="./roadone-client-portal"><img src="./roadone-client-portal/preview.jpg" alt="RoadOne Client Portal" width="100%"/></a>
+      <h3><a href="./roadone-client-portal">RoadOne Client Portal</a></h3>
+      <p>Where RoadOne's intermodal customers track orders, see their freight on a map, and pay invoices.</p>
+      <p><sub>Client: RoadOne IntermodaLogistics · 2023 – present<br/>React · Redux · PHP · Node.js · MySQL · Mapbox</sub></p>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+      <a href="./pokergo"><img src="./pokergo/preview.jpg" alt="PokerGO" width="100%"/></a>
+      <h3><a href="./pokergo">PokerGO</a></h3>
+      <p>Live tournament reporting, partner data APIs, and subscription campaign pages for PokerGO's World Series of Poker coverage.</p>
+      <p><sub>Client: PokerGO · 2021 – 2022<br/>Vue.js · Node.js · Express · Strapi · MySQL</sub></p>
+    </td>
+    <td width="50%" valign="top">
+      <a href="./curaleaf"><img src="./curaleaf/preview.jpg" alt="Curaleaf and Select" width="100%"/></a>
+      <h3><a href="./curaleaf">Curaleaf and Select</a></h3>
+      <p>Storefronts, payments, and analytics for two national cannabis brands across more than 18 state-specific subdomains.</p>
+      <p><sub>Client: Curaleaf · 2020 – 2021<br/>React · Gatsby · Azure Functions · GraphQL · Strapi</sub></p>
+    </td>
+  </tr>
+</table>
 
-### Eden Earth
+## Get in touch
 
-A mobile app that turns before-and-after cleanup photos into an AI estimate of the litter kept out of waterways, with streaks, challenges, and shareable impact cards.
+If you're working on something where AI, mobile, or messy real-world data meet, I'd like to hear about it.
 
-**Stack:** Expo, React Native, Next.js, Supabase, Google Gemini, Railway  
-**Links:** [Case study](./eden-earth) · [edenearthapp.com](https://www.edenearthapp.com)
-
-### Dreamcatcher
-
-A dream journal that interprets entries with GPT-4 and connects them to earlier dreams through vector search.
-
-**Stack:** Next.js, React, Flask, GPT-4, Pinecone, Supabase  
-**Links:** [Case study](./dreamcatcher)
-
-## Client work
-
-### Koin Direct
-
-A mobile app for funding and cashing out casino slot machines over Bluetooth, QR, or player card, built for Koin Payments.
-
-**Stack:** React Native, TypeScript, Bluetooth LE, Koin Pay API, Ardent Connect  
-**Links:** [Case study](./koin-direct)
-
-### Echolink
-
-Driver feedback and sentiment analysis for enterprise trucking companies, combining VADER, GPT-4, and vector classification.
-
-**Stack:** React, React Native, Flask, Supabase, GPT-4, VADER  
-**Links:** [Case study](./echolink)
-
-### RoadOne Client Portal
-
-Order tracking, dispatch visibility, and payments for RoadOne's intermodal logistics customers.
-
-**Stack:** React, Redux, PHP, Node.js, MySQL, TSYS, Stripe, Mapbox  
-**Links:** [Case study](./roadone-client-portal)
-
-### PokerGO
-
-Live tournament reporting, partner data APIs, and subscription campaign pages for PokerGO's World Series of Poker coverage.
-
-**Stack:** Vue.js, AngularJS, Node.js, Express, Strapi, WordPress, AEM, MySQL  
-**Links:** [Case study](./pokergo)
-
-### Curaleaf and Select
-
-E-commerce storefronts, payments integration, and analytics for two national cannabis brands across 18+ state subdomains.
-
-**Stack:** React, Gatsby, Azure Functions, GraphQL, Strapi, AEM, Braintree  
-**Links:** [Case study](./curaleaf)
-
-## Contact
-
-I'm always building, from R&D prototypes to AI systems. If you'd like to collaborate or talk through a project, get in touch.
-
-Email: [jblock@jblocktech.com](mailto:jblock@jblocktech.com)  
-Website: [jblocktech.com](https://jblocktech.com)
+[jblock@jblocktech.com](mailto:jblock@jblocktech.com) · [jblocktech.com](https://jblocktech.com)
