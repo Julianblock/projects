@@ -1,101 +1,126 @@
-# 🧭 RoadOne Client Portal – Unified Logistics Operations Hub  
-**Role:** Lead Frontend Engineer / Full-Stack Architect  
+# RoadOne Client Portal
+
+Order tracking, dispatch visibility, and payments for RoadOne's intermodal logistics customers.
+
+**Role:** Lead frontend engineer, full-stack architect  
 **Client:** RoadOne IntermodaLogistics (via Ramsey Mediaworks)  
-**Duration:** 2023 – Present  
-**Tech Stack:** React.js, Redux, PHP, Node.js, Supabase, TSYS, Stripe, Tailwind, Docker, MySQL
-
----
+**Period:** 2023 – present  
+**Source:** Private (client work)
 
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&pause=1000&color=00FFCC&center=true&vCenter=true&width=650&lines=All-in-One+Logistics+Operations+Portal;Built+for+Trucking+Efficiency+at+Scale;Integrated+Payments%2C+Routing%2C+and+Support" alt="Typing SVG" />
+  <img src="./home.png" alt="Open orders view" width="800"/>
 </p>
 
----
+## Overview
 
-## 🧩 Overview
+The portal is where RoadOne's customers manage their freight: open orders and the legs of each move, order history, inventory, payments, and reports. It gives customers a self-serve view of where each container is and what it costs, which takes load off RoadOne's customer service team.
 
-The **RoadOne Client Portal** is an enterprise-grade web platform for RoadOne’s clients to **manage operations, payments, dispatch logs, driver feedback, and more** — all in one centralized, secure hub.
+## What I built
 
-Designed for speed, usability, and visibility, the portal gives RoadOne’s national clients real-time insight and control over their logistics workflows.
+- The frontend architecture in React and Redux: component-driven, with extensive form handling
+- TSYS and Stripe payment gateway integrations through secure backend APIs
+- Route and terminal logs with admin overrides, filtering, and Mapbox geolocation
+- Client-specific permissions and views for each user type
+- Custom grid components for dispatch management and rate overrides
+- Printable invoice summaries and PDF generation
 
----
+## Technical highlights
 
-## 🛠️ My Contributions
+### Dispatch grid
 
-- 🧱 **Architected the frontend system** using React.js + Redux, fully component-driven with deep form handling
-- 💸 Integrated **TSYS + Stripe** payment gateways with secure C#-based backend APIs
-- 📍 Developed **real-time route logs**, including admin overrides, filtering, and geolocation data via Mapbox
-- 🔒 Built **client-specific permissioning and views**, allowing granular access per user type
-- 📦 Created **custom grid components** for dispatch management and dynamic rate override logic
-- 📊 Enhanced reporting with printable invoice summaries and embedded PDF generation
+A configurable grid for dispatch data with client-specific columns, filters, and override indicators. It flags custom pricing entries and status mismatches as they appear.
 
----
+### Multi-gateway payments
 
-## 📊 Results / Impact
+Payments run through TSYS or Stripe. The route depends on account metadata, payment type, and terminal location.
 
-- ⏱ Saved client service teams **dozens of hours/week** through automation and visibility
-- 💰 Enabled $10M+ in transactions via seamless payment integrations
-- 🧠 Reduced support ticket volume by **30%** thanks to proactive feedback & reporting tools
-- 🙌 Praised by RoadOne’s leadership for clarity, UX polish, and technical resilience
+### Map and list views
 
----
+Open orders can be viewed as a paginated table or on a map that clusters orders by region. Both views share the same search (by equipment number and date range) and CSV export.
 
----
+### Documents
 
-## 🖥️ The Portal in Action — Visual Showcase
+Admins generate branded PDF summaries of logs and transactions, filtered by date, along with downloadable receipts.
 
-### 🔐 Client Login Portal  
+## Architecture
+
+A simplified view based on the systems described on this page.
+
+```mermaid
+flowchart LR
+  subgraph Clients
+    USER["Customer browser"]
+  end
+
+  subgraph Portal["Client portal"]
+    SPA["React + Redux app<br/>orders, map, payments, documents"]
+  end
+
+  subgraph Backend
+    API["Backend APIs<br/>PHP + Node.js"]
+    DB[("MySQL")]
+    DOCS["PDF + CSV export"]
+  end
+
+  subgraph External
+    MAPBOX["Mapbox"]
+    TSYS["TSYS"]
+    STRIPE["Stripe"]
+  end
+
+  USER --> SPA --> API --> DB
+  SPA --> MAPBOX
+  API --> TSYS
+  API --> STRIPE
+  API --> DOCS
+```
+
+## Stack
+
+| Layer | Technology |
+|---|---|
+| Frontend | React, Redux, Tailwind CSS |
+| Backend | PHP, Node.js, Docker |
+| Data | MySQL, Supabase |
+| Payments | TSYS, Stripe |
+| Maps | Mapbox |
+
+## Results
+
+- Client service teams saved dozens of hours per week
+- More than $10M in transactions processed through the payment integrations
+- Support ticket volume down 30%
+
+## Screenshots
+
+The screenshots below use a demo customer account.
+
+### Sign-in
+
 <p align="center">
-  <img src="./login.png" alt="RoadOne Login Screen" width="700"/>
+  <img src="./login.png" alt="Customer portal sign-in" width="800"/>
 </p>
 
-> **Secure & Branded Access.** Each client logs into a branded, secure entry point—designed for fast access, minimal friction, and real-time validation.
+### Open orders
 
----
-
-### 🏠 Operations Home Dashboard  
 <p align="center">
-  <img src="./home.png" alt="RoadOne Portal Home" width="700"/>
+  <img src="./home.png" alt="Open orders table" width="800"/>
 </p>
 
-> **Your Logistics Command Center.** At-a-glance visibility into dispatch summaries, invoices, upcoming payments, and driver feedback — all in one clean view.
+Each order shows its bill-to name, leg count, percent complete, reference, equipment, location, storage, and per diem date. Orders can be searched by equipment number and date range and exported to CSV.
 
----
+### Map view
 
-### 📦 Real-Time Dispatch Tracker  
 <p align="center">
-  <img src="./tracker.png" alt="RoadOne Dispatch Tracker" width="700"/>
+  <img src="./tracker.png" alt="Open orders map view" width="800"/>
 </p>
 
-> **Live load status, terminal logs, and driver updates.** Track routes, terminal activity, and custom flags with real-time sync and override alerts.
+The same open orders clustered by region on a map.
 
----
+### Order detail
 
-### 📊 Client Dashboard & Invoice Summary  
 <p align="center">
-  <img src="./dashboard.png" alt="RoadOne Dashboard View" width="700"/>
+  <img src="./dashboard.png" alt="Order detail with legs" width="800"/>
 </p>
 
-> **Invoice automation meets smart filtering.** Generate and download branded summaries, filter by date or status, and manage payment visibility for client-facing records.
-
-
-
----
-
-## 🧠 Tech Highlights
-
-### 📦 Dynamic Dispatch Grid System
-A highly customizable dispatch management interface with client-specific columns, filters, and override indicators — including logic that flags custom pricing entries and status mismatches in real time.
-
-### 💳 Secure Multi-Gateway Payments
-Integrated both **TSYS** and **Stripe** to allow flexible payments — with routing logic depending on account metadata, payment type, and terminal location.
-
-### 📁 Admin-Friendly Document Tools
-Admins can generate PDF summaries of logs and transactions, complete with branding, date filters, and downloadable receipts.
-
----
-
-## 🛠 Built for Enterprise. Designed for Speed.  
-This portal wasn't built to impress — it was built to **serve thousands of users with clarity, security, and reliability**, and it’s now a **core business tool** for one of the nation’s largest intermodal logistics providers.
-
----
+An expanded order: current leg, load type, pickup and delivery locations, bill of lading, storage and per diem dates, and a table of each leg with its inventory and completion timestamps.
