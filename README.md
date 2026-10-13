@@ -26,6 +26,9 @@ Each example here shows **how I think**, **how I build**, and **why it mattered*
 
 ## 🧩 Featured Projects
 
+- [`🎙️ Pitch Practice`](./pitch-practice)  
+  *AI role-play training for retail sales teams — live-voice AI shoppers, instant scoring, manager coaching, and a native iOS app, built in one weekend.* 🌐 [Live app](https://web-production-9994a2.up.railway.app)
+
 - [`🌊 Eden Earth`](./eden-earth)  
   *Photo litter, clean it, see the ocean impact — a React Native app where Gemini vision turns before/after cleanup photos into shareable impact proof.*
 
