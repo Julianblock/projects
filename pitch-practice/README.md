@@ -2,11 +2,12 @@
 
 AI role-play training for retail sales teams: reps rehearse customer conversations out loud with AI shoppers, get scored against their company's playbook, and managers coach from the results.
 
-**Role:** Founder, full-stack and mobile engineer  
-**Type:** Personal product, B2B SaaS  
+**Client:** Guitar Center  
+**Role:** Full-stack and mobile engineer  
+**Type:** B2B SaaS for retail sales teams  
 **Period:** 2026  
 **Status:** Web app in production; iOS app in internal TestFlight testing  
-**Source:** Private (available on request)
+**Source:** Private (client work)
 
 <p align="center">
   <img src="./marketing-home-hero.jpg" alt="Pitch Practice marketing site" width="800"/>
@@ -16,7 +17,7 @@ AI role-play training for retail sales teams: reps rehearse customer conversatio
 
 Retail floor sales skills are usually learned on real customers, which costs sales. Role-play with a manager is rare and inconsistent, product and policy sheets get read once, and managers can't tell who is ready until sales numbers come in weeks later.
 
-Pitch Practice is built for multi-store retail companies (music stores, home improvement, electronics, car dealerships, specialty retail) with reps on the floor, store managers coaching them, and owners who want to know which stores and people are ready.
+Pitch Practice was built for Guitar Center, which owns the product. It is designed for multi-store retail companies (music stores, home improvement, electronics, car dealerships, specialty retail) with reps on the floor, store managers coaching them, and owners who want to know which stores and people are ready.
 
 How it works:
 
