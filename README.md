@@ -34,7 +34,7 @@ Most of what I've shipped was client work under NDA in logistics, fintech and pa
       <a href="./pitch-practice"><img src="./pitch-practice/preview.jpg" alt="Pitch Practice" width="100%"/></a>
       <h3><a href="./pitch-practice">Pitch Practice</a></h3>
       <p>AI role-play training for retail sales teams. Reps talk to AI customers by voice, get scored against their company's playbook, and managers coach from the results.</p>
-      <p><sub>Own product · 2026<br/>Next.js · Expo · Supabase · OpenAI Realtime API</sub></p>
+      <p><sub>Client: Guitar Center · 2026<br/>Next.js · Expo · Supabase · OpenAI Realtime API</sub></p>
     </td>
     <td width="50%" valign="top">
       <a href="./eden-earth"><img src="./eden-earth/preview.jpg" alt="Eden Earth" width="100%"/></a>
