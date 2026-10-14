@@ -17,6 +17,20 @@ Most of what I've shipped was client work under NDA in logistics, fintech and pa
 <table>
   <tr>
     <td width="50%" valign="top">
+      <a href="./korena"><img src="./korena/preview.jpg" alt="Korena" width="100%"/></a>
+      <h3><a href="./korena">Korena</a></h3>
+      <p>Guitar Center's music store and companion app: tuner, metronome, gear locker, and one-tap restock next to 87,000 instruments in stock, with an assistant that knows the catalog.</p>
+      <p><sub>Client: Guitar Center · 2026<br/>Web storefront · iPhone and Android app · AI catalog assistant</sub></p>
+    </td>
+    <td width="50%" valign="top">
+      <a href="./silvr"><img src="./silvr/preview.jpg" alt="Silvr" width="100%"/></a>
+      <h3><a href="./silvr">Silvr</a></h3>
+      <p>Snap a photo or a screenshot of an outfit and get the exact pieces, or the closest matches, across hundreds of retailers.</p>
+      <p><sub>Client: Silvr Limited · 2026<br/>iOS and Android app · fashion recognition · product matching</sub></p>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
       <a href="./pitch-practice"><img src="./pitch-practice/preview.jpg" alt="Pitch Practice" width="100%"/></a>
       <h3><a href="./pitch-practice">Pitch Practice</a></h3>
       <p>AI role-play training for retail sales teams. Reps talk to AI customers by voice, get scored against their company's playbook, and managers coach from the results.</p>
