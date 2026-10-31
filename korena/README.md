@@ -123,6 +123,12 @@ The source is private, so this table lists the product surface rather than speci
 
 The korena.com homepage, with the "describe the gear or artist" search and chat in the header.
 
+### App Store artwork
+
+<p align="center">
+  <img src="./app-store-tools.jpg" alt="Korena app promo: All the tools a musician needs, with the home screen showing the tuner, metronome, scales and modes, chord library, gear locker, and practice timer" width="360"/>
+</p>
+
 ### App landing page
 
 <p align="center">
