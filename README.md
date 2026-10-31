@@ -45,6 +45,20 @@ Most of what I've shipped was client work under NDA in logistics, fintech and pa
   </tr>
   <tr>
     <td width="50%" valign="top">
+      <a href="./searchlight"><img src="./searchlight/preview.jpg" alt="Searchlight, Nevada" width="100%"/></a>
+      <h3><a href="./searchlight">Searchlight, Nevada</a></h3>
+      <p>Fly as a desert bird over the old gold-mining town on US-95, with real terrain, a physically based sky, half a million Joshua trees and desert plants, and Lake Mohave in the canyon below.</p>
+      <p><sub>Own game · 2026 · <a href="https://julianblock.github.io/Searchlight-game/">Play in the browser</a><br/>three.js · WebGL · TypeScript · USGS and OpenStreetMap data</sub></p>
+    </td>
+    <td width="50%" valign="top">
+      <a href="./sutter-buttes"><img src="./sutter-buttes/preview.jpg" alt="Sutter Buttes" width="100%"/></a>
+      <h3><a href="./sutter-buttes">Sutter Buttes</a></h3>
+      <p>Fly as a bird over California's small volcanic range in the Sacramento Valley, with 1.4 million trees, rebuilt farm towns, seasons, weather, and a drivable truck.</p>
+      <p><sub>Own game · 2026 · <a href="https://julianblock.github.io/sutter-buttes-game/">Play in the browser</a><br/>three.js · WebGL · TypeScript · USGS and OpenStreetMap data</sub></p>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
       <a href="./koin-direct"><img src="./koin-direct/preview.jpg" alt="Koin Direct" width="100%"/></a>
       <h3><a href="./koin-direct">Koin Direct</a></h3>
       <p>Fund and cash out casino slot machines from your phone over Bluetooth, QR, or player card. No kiosk, no paper tickets.</p>
